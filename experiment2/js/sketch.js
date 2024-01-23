@@ -27,41 +27,41 @@ class MyClass {
 
 // setup() function is called once when the program starts
 function setup() {
-    // place our canvas, making it fit our container
-    canvasContainer = $("#canvas-container");
-    let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
-    canvas.parent("canvas-container");
-    // resize canvas is the page is resized
-    $(window).resize(function() {
-        console.log("Resizing...");
-        resizeCanvas(canvasContainer.width(), canvasContainer.height());
-    });
-    // create an instance of the class
-    myInstance = new MyClass(VALUE1, VALUE2);
-
-    var centerHorz = windowWidth / 2;
-    var centerVert = windowHeight / 2;
-}
-
-// draw() function is called repeatedly, it's the main animation loop
-function draw() {
-    background(220);    
-    // call a method on the instance
-    myInstance.myMethod();
-
-    // Put drawings here
-    var centerHorz = canvasContainer.width() / 2 - 125;
-    var centerVert = canvasContainer.height() / 2 - 125;
-    fill(234, 31, 81);
-    noStroke();
-    rect(centerHorz, centerVert, 250, 250);
-    fill(255);
-    textStyle(BOLD);
-    textSize(140);
-    text("p5*", centerHorz + 10, centerVert + 200);
-}
+    createCanvas(720, 720);
+    noFill();
+    background(255);
+    strokeWeight(2);
+    stroke(0, 25);
+  }
+  
+  function draw() {
+    strokeWeight(random(2));
+    stroke(random(150), random(150), random(150));
+    push();
+    translate(width/2, height/2);
+    rotate(sin(frameCount/50));
+  
+    var circleResolution = int(map(sin(frameCount)*10 + 100, 0, height, 2, 10));
+    var radius = cos(frameCount/50)*400;
+    var angle = TAU / circleResolution;
+  
+    beginShape();
+    for (var i = 0; i <= circleResolution; i++) {
+      var x = cos(angle * i) * radius;
+      var y = sin(angle * i) * radius;
+      vertex(x, y);
+    }
+    endShape();
+  
+    pop();
+  }
+  
+  function keyReleased() {
+    if (keyCode == DELETE || keyCode == BACKSPACE) background(255);
+  }
 
 // mousePressed() function is called once after every time a mouse button is pressed
 function mousePressed() {
     // code to run when mouse is pressed
 }
+

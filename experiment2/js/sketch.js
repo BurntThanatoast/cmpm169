@@ -12,7 +12,6 @@ function setup() {
         console.log("Resizing...");
         resizeCanvas(canvasContainer.width(), canvasContainer.height());
     });
-    createCanvas(720, 720);
     noFill();
     background(255);
     strokeWeight(2);

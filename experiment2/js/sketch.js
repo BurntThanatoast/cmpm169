@@ -1,32 +1,17 @@
-// sketch.js - purpose and description here
-// Author: Your Name
-// Date:
+// sketch.js - Experiment 2 vector art. Made a thing that creates triangles and rotates them with random colors for the lines. It makes a cool design as it is oscillating over and over.
+// Author: Joshua Vaillancourt
+// Date: 1/22/24
 
-// Here is how you might set up an OOP p5.js project
-// Note that p5.js looks for a file called sketch.js
-
-// Constants - User-servicable parts
-// In a longer project I like to put these in a separate file
-const VALUE1 = 1;
-const VALUE2 = 2;
-
-// Globals
-let myInstance;
-let canvasContainer;
-
-class MyClass {
-    constructor(param1, param2) {
-        this.property1 = param1;
-        this.property2 = param2;
-    }
-
-    myMethod() {
-        // code to run when method is called
-    }
-}
-
-// setup() function is called once when the program starts
 function setup() {
+    // place our canvas, making it fit our container
+    canvasContainer = $("#canvas-container");
+    let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
+    canvas.parent("canvas-container");
+    // resize canvas is the page is resized
+    $(window).resize(function() {
+        console.log("Resizing...");
+        resizeCanvas(canvasContainer.width(), canvasContainer.height());
+    });
     createCanvas(720, 720);
     noFill();
     background(255);
@@ -59,9 +44,3 @@ function setup() {
   function keyReleased() {
     if (keyCode == DELETE || keyCode == BACKSPACE) background(255);
   }
-
-// mousePressed() function is called once after every time a mouse button is pressed
-function mousePressed() {
-    // code to run when mouse is pressed
-}
-

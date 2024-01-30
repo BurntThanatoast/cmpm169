@@ -5,7 +5,7 @@
 // KEYS
 // s                   : save png
 //
-'use strict';
+//'use strict';
 
 var maxCount = 1601; // max count of the cirlces
 var currentCount = 1;
@@ -17,6 +17,7 @@ var Green = 0;
 var Blue = 0;
 
 function setup() {
+// place our canvas, making it fit our container
 canvasContainer = $("#canvas-container");
 let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
 canvas.parent("canvas-container");

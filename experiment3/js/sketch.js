@@ -38,6 +38,9 @@ $(window).resize(function() {
 
 function draw() {
  //clear();
+ x[0] = 5;
+ y[0] = 5;
+ r[0] = 10;
 
  for (var i = 1; i < currentCount; i++) {
    if(i % 40 == 0) {

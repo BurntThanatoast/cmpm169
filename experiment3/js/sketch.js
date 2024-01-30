@@ -1,67 +1,79 @@
-// sketch.js - purpose and description here
-// Author: Your Name
-// Date:
+// sketch.js - Generative Art Dot Painting. Uses random colored dots to fill out a canvas and keeps making new ones over and over. Perhaps a seizure warning is necessary due to flashing colors.
+// Author: Joshua Vaillancourt
+// Date: 1/29/24
 
-// Here is how you might set up an OOP p5.js project
-// Note that p5.js looks for a file called sketch.js
+// KEYS
+// s                   : save png
+//
+'use strict';
 
-// Constants - User-servicable parts
-// In a longer project I like to put these in a separate file
-const VALUE1 = 1;
-const VALUE2 = 2;
+var maxCount = 1601; // max count of the cirlces
+var currentCount = 1;
+var x = [];
+var y = [];
+var r = [];
+var Red = 0;
+var Green = 0;
+var Blue = 0;
 
-// Globals
-let myInstance;
-let canvasContainer;
-
-class MyClass {
-    constructor(param1, param2) {
-        this.property1 = param1;
-        this.property2 = param2;
-    }
-
-    myMethod() {
-        // code to run when method is called
-    }
-}
-
-// setup() function is called once when the program starts
 function setup() {
-    // place our canvas, making it fit our container
-    canvasContainer = $("#canvas-container");
-    let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
-    canvas.parent("canvas-container");
-    // resize canvas is the page is resized
-    $(window).resize(function() {
-        console.log("Resizing...");
-        resizeCanvas(canvasContainer.width(), canvasContainer.height());
-    });
-    // create an instance of the class
-    myInstance = new MyClass(VALUE1, VALUE2);
+canvasContainer = $("#canvas-container");
+let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
+canvas.parent("canvas-container");
+// resize canvas is the page is resized
+$(window).resize(function() {
+    console.log("Resizing...");
+    resizeCanvas(canvasContainer.width(), canvasContainer.height());
+});
+ createCanvas(400, 400);
+ strokeWeight(0.5);
 
-    var centerHorz = windowWidth / 2;
-    var centerVert = windowHeight / 2;
+ // first circle
+ x[0] = 5;
+ y[0] = 5;
+ r[0] = 10;
+ 
 }
 
-// draw() function is called repeatedly, it's the main animation loop
 function draw() {
-    background(220);    
-    // call a method on the instance
-    myInstance.myMethod();
+ //clear();
 
-    // Put drawings here
-    var centerHorz = canvasContainer.width() / 2 - 125;
-    var centerVert = canvasContainer.height() / 2 - 125;
-    fill(234, 31, 81);
-    noStroke();
-    rect(centerHorz, centerVert, 250, 250);
-    fill(255);
-    textStyle(BOLD);
-    textSize(140);
-    text("p5*", centerHorz + 10, centerVert + 200);
+ for (var i = 1; i < currentCount; i++) {
+   if(i % 40 == 0) {
+     x[i] = 5;
+     y[i] = y[i-1] + 10;
+   } else {
+     x[i] = x[i-1] + 10;
+     y[i] = y[i-1];
+   }
+ }
+ currentCount++;
+
+ // draw them
+ for (var i = 0; i < currentCount; i++) {
+   var bruh = random([1, 2, 3]);
+   if (bruh == 1) {
+     Red = noise(frameCount*40)*200;
+     Green = noise(frameCount*48)*200;
+     Blue = noise(frameCount*68)*200;
+   } else if (bruh == 2) {
+     Red = noise(frameCount*120)*200;
+     Green = noise(frameCount*161)*200;
+     Blue = noise(frameCount*187)*200;
+   } else if (bruh == 3) {
+     Red = noise(frameCount*235)*200;
+     Green = noise(frameCount*245)*200;
+     Blue = noise(frameCount*238)*200;
+   }
+   fill(Red, Green, Blue);
+   circle(x[i], y[i], 10);
+ }
+
+ if (currentCount >= maxCount){
+   currentCount = 1;
+ }
 }
 
-// mousePressed() function is called once after every time a mouse button is pressed
-function mousePressed() {
-    // code to run when mouse is pressed
+function keyReleased() {
+ if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
 }

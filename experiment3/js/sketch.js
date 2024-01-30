@@ -30,9 +30,9 @@ $(window).resize(function() {
  strokeWeight(0.5);
 
  // first circle
- x[0] = 5;
- y[0] = 5;
- r[0] = 10;
+ //x[0] = 5;
+// y[0] = 5;
+ //r[0] = 10;
  
 }
 

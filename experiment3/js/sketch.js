@@ -25,7 +25,7 @@ $(window).resize(function() {
     console.log("Resizing...");
     resizeCanvas(canvasContainer.width(), canvasContainer.height());
 });
- createCanvas(400, 400);
+ //createCanvas(400, 400);
  strokeWeight(0.5);
 
  // first circle

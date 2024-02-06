@@ -2,7 +2,7 @@
 // Author: Joshua Vaillancourt
 // Date: 2/5/24
 
-var sinOsc, sinFilter, reverb, reverbTime, reverbDecay;
+var sinOsc, sinFilter;
 
 
 function setup() {
@@ -25,10 +25,6 @@ function setup() {
     sinOsc.start();
     sinOsc.disconnect();
     sinOsc.connect(sinFilter);
-	
-    reverb = new p5.Reverb();
-    reverbTime = 1;
-    reverbDecay = 0.5;
     delay = new p5.Delay();
   
 }

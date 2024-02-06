@@ -43,7 +43,7 @@ function draw() {
   delay.process(sinOsc, (windowHeight-mouseY)/(windowHeight+100));
 }
 
-function touchStarted(){
+function mouseIsPressed(){
   userStartAudio();
   sinOsc.amp(1);
 }
@@ -53,6 +53,6 @@ function mouseDragged(){
   sinOsc.amp(1);
 }
 
-function touchEnded(){
-  sinOsc.amp(1)
+function mouseReleased(){
+  sinOsc.amp(0)
 }

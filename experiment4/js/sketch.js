@@ -26,7 +26,7 @@ function setup() {
     sinOsc.start();
     sinOsc.disconnect();
     sinOsc.connect(sinFilter);
-    delay = new p5.Delay();
+    //delay = new p5.Delay();
   
 }
 
@@ -37,7 +37,7 @@ function draw() {
     sinFilter.freq(setFreq);
     sinFilter.res(5);
     sinOsc.pan((mouseX*2-windowWidth)/(windowWidth));
-    delay.process(sinOsc, (windowHeight-mouseY)/(windowHeight+100));
+    //delay.process(sinOsc, (windowHeight-mouseY)/(windowHeight+100));
 }
 
 function mouseIsPressed(){

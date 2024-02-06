@@ -15,6 +15,7 @@ function setup() {
         console.log("Resizing...");
         resizeCanvas(canvasContainer.width(), canvasContainer.height());
     });
+    createCanvas(800, 800);
     background(0);
 	
     sinFilter = new p5.BandPass();

@@ -36,7 +36,7 @@ function draw() {
     let setFreq = ((mouseX+mouseY)*2);
     sinFilter.freq(setFreq);
     sinFilter.res(5);
-    sinOsc.pan((mouseX*2-windowWidth)/(windowWidth));
+    sinOsc.pan((mouseX*2-800)/(800));
     //delay.process(sinOsc, (windowHeight-mouseY)/(windowHeight+100));
 }
 

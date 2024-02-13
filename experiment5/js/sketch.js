@@ -35,7 +35,7 @@ function draw() {
     rotateY(cos(frameCount)/50 / 22.0);
     //rotateX(sin(frameCount)/50 + i / 20.0+500);
     translate(random(500), 0, 0);
-    scale(0.01)
+    scale(0.02)
   
     
     box(width / 10);
@@ -50,7 +50,7 @@ function draw() {
     rotateZ(sin(frameCount)/50 + i / 24.0+1000);
     //rotateX(sin(frameCount)/50 + i / 20.0+500);
     translate(random(500), 0, 0);
-    scale(0.01)
+    scale(0.02)
   
     
     box(width / 10);
@@ -65,7 +65,7 @@ function draw() {
     rotateZ(sin(frameCount)/50 + i / 24.0+1000);
     //rotateX(sin(frameCount)/50 + i / 20.0+500);
     translate(random(500), 0, 0);
-    scale(0.01)
+    scale(0.02)
   
     
     box(width / 10);
@@ -79,7 +79,7 @@ function draw() {
     rotateZ(sin(frameCount)/50 + i / 24.0+1000);
     //rotateX(sin(frameCount)/50 + i / 20.0+500);
     translate(random(500), 0, 0);
-    scale(0.01)
+    scale(0.02)
   
     
     box(width / 10);
@@ -93,7 +93,7 @@ function draw() {
     rotateZ(sin(frameCount)/50 + i / 24.0+1000);
     //rotateX(sin(frameCount)/50 + i / 20.0+500);
     translate(random(500), 0, 0);
-    scale(0.01)
+    scale(0.02)
   
     
     box(width / 10);

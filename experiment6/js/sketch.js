@@ -15,7 +15,7 @@
  * ctrl                : save png
  */
 
-var font = 'times-new-roman';
+//var font = 'times-new-roman';
 var letter = 'L';
 
 function setup() {
@@ -29,9 +29,9 @@ function setup() {
       resizeCanvas(canvasContainer.width(), canvasContainer.height());
     });
     background(0);
-    fill(250);
-    frameRate(60);
-    textFont(font);
+    //fill(250);
+    //frameRate(60);
+    //textFont(font);
 }
   
 function draw() {

@@ -48,7 +48,7 @@ function draw() {
 function mouseMoved() {
     clear();
     background(0,0,0, 100)
-    textSize(abs(mouseX-mouseY) + 1);
+    textSize(mouseX+mouseY + 1);
     //text(letter, mouseX, mouseY);
 }
   

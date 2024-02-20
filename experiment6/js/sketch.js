@@ -15,7 +15,7 @@
  * ctrl                : save png
  */
 
-'use strict';
+//'use strict';
 
 //var font = 'times-new-roman';
 //var letter = 'L';

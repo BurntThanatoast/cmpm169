@@ -28,7 +28,7 @@ function setup() {
       console.log("Resizing...");
       resizeCanvas(canvasContainer.width(), canvasContainer.height());
     });
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(800, 800);
     background(0);
     fill(250);
     frameRate(60);

@@ -15,6 +15,9 @@
  * ctrl                : save png
  */
 
+var font = 'times-new-roman';
+var letter = 'L';
+
 function setup() {
     // place our canvas, making it fit our container
     canvasContainer = $("#canvas-container");

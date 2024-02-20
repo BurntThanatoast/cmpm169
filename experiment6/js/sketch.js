@@ -54,7 +54,7 @@ function mouseMoved() {
   
 function mouseDragged() {
     background(0,0,0, 1)
-    textSize(abs(mouseX-mouseY) + 1);
+    textSize((mouseX+mouseY) + 1);
     text(letter, mouseX, mouseY);
 }
   

@@ -61,10 +61,6 @@ function mouseDragged() {
     text(letter, mouseX, mouseY);
 }
 
-function keyReleased() {
-    if (keyCode == CONTROL) saveCanvas(gd.timestamp(), 'png');
-}
-
 function keyTyped() {
     letter = key;
 }

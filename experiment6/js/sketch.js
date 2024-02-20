@@ -48,19 +48,19 @@ function draw() {
     text(letter, width - sin(frameCount) * width, sin(frameCount) * height);
 }
 
-function mouseMoved() {
+//function mouseMoved() {
     //clear();
-    background(0,0,0, 100)
-    textSize(abs(mouseX-mouseY) + 1);
+    //background(0,0,0, 100)
+    //textSize(abs(mouseX-mouseY) + 1);
     //text(letter, mouseX, mouseY);
-}
+//}
 
-function mouseDragged() {
-    background(0,0,0, 1)
-    textSize(abs(mouseX-mouseY) + 1);
-    text(letter, mouseX, mouseY);
-}
+//function mouseDragged() {
+//    background(0,0,0, 1)
+//    textSize(abs(mouseX-mouseY) + 1);
+//    text(letter, mouseX, mouseY);
+//}
 
-function keyTyped() {
-    letter = key;
-}
+//function keyTyped() {
+//    letter = key;
+//}

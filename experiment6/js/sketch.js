@@ -17,8 +17,8 @@
 
 'use strict';
 
-var font = 'times-new-roman';
-var letter = 'L';
+//var font = 'times-new-roman';
+//var letter = 'L';
 
 function setup() {
     // place our canvas, making it fit our container
@@ -35,7 +35,7 @@ function setup() {
     fill(250);
     //frameRate(60);
 
-    textFont(font);
+    //textFont(font);
     //textAlign(CENTER, CENTER);
 }
 

@@ -21,7 +21,15 @@ var font = 'sans-serif';
 var letter = 'A';
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  // place our canvas, making it fit our container
+  canvasContainer = $("#canvas-container");
+  let canvas = createCanvas(canvasContainer.width(), canvasContainer.height(), WEBGL);
+  canvas.parent("canvas-container");
+  // resize canvas is the page is resized
+  $(window).resize(function() {
+    console.log("Resizing...");
+    resizeCanvas(canvasContainer.width(), canvasContainer.height());
+  });
   background(255);
   fill(0);
 

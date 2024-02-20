@@ -15,7 +15,7 @@
  * ctrl                : save png
  */
 
-var font = 'times-new-roman';
+var font = 'sans-serif';
 var letter = 'L';
 
 function setup() {
@@ -35,7 +35,14 @@ function setup() {
     textAlign(CENTER, CENTER);
 }
   
-
+function draw() {
+    //rotate(sin(frameCount)/20);
+    text(letter, (sin(frameCount) * width/2) + width/2, (cos(frameCount) * height/2) + height/2);
+    text(letter, sin(frameCount) * width, height/2);
+    text(letter, width/2, sin(frameCount) * height);
+    text(letter, sin(frameCount) * width, sin(frameCount) * height);
+    text(letter, width - sin(frameCount) * width, sin(frameCount) * height);
+}
 
 function mouseMoved() {
     clear();

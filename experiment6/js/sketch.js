@@ -25,91 +25,38 @@ function setup() {
       console.log("Resizing...");
       resizeCanvas(canvasContainer.width(), canvasContainer.height());
     });
-    //createCanvas(4/3*windowHeight, windowHeight, WEBGL);
-      colorMode(HSB, 255);
+    background(0);
+    fill(250);
     frameRate(60);
+    textFont(font);
   }
   
-  function draw() {
-    
-    background(0);
-    ambientLight(100);
-    pointLight(200, 200, 200, -400, -800, 800);
-    stroke('black');
-    rotateY(-frameCount / 100.0);
-    rotateX(frameCount / 50.0);
+function draw() {
+    //rotate(sin(frameCount)/20);
+    text(letter, (sin(frameCount) * width/2) + width/2, (cos(frameCount) * height/2) + height/2);
+    text(letter, sin(frameCount) * width, height/2);
+    text(letter, width/2, sin(frameCount) * height);
+    text(letter, sin(frameCount) * width, sin(frameCount) * height);
+    text(letter, width - sin(frameCount) * width, sin(frameCount) * height);
+  }
+
+function mouseMoved() {
+    //clear();
+    background(0,0,0, 100)
+    textSize(abs(mouseX-mouseY) + 1);
+    //text(letter, mouseX, mouseY);
+  }
   
+function mouseDragged() {
+    background(0,0,0, 1)
+    textSize(abs(mouseX-mouseY) + 1);
+    text(letter, mouseX, mouseY);
+  }
   
-    for (let i = 0; i < 256; i++) {
-      push();
-      normalMaterial();
-      
-      rotateZ(sin(frameCount)/50 + i / 24.0+1000);
-      rotateY(cos(frameCount)/50 / 22.0);
-      //rotateX(sin(frameCount)/50 + i / 20.0+500);
-      translate(random(500), 0, 0);
-      scale(0.02)
-    
-      
-      box(width / 10);
-      pop();
-    }
-    
-    for (let i = 0; i < 256; i++) {
-      push();
-      normalMaterial();
-      
-      rotateY(cos(frameCount)/50 / 22.0-500);
-      rotateZ(sin(frameCount)/50 + i / 24.0+1000);
-      //rotateX(sin(frameCount)/50 + i / 20.0+500);
-      translate(random(500), 0, 0);
-      scale(0.02)
-    
-      
-      box(width / 10);
-      pop();
-    }
-    
-    for (let i = 0; i < 256; i++) {
-      push();
-      normalMaterial();
-      
-      rotateY(cos(frameCount)/50 / 22.0+500);
-      rotateZ(sin(frameCount)/50 + i / 24.0+1000);
-      //rotateX(sin(frameCount)/50 + i / 20.0+500);
-      translate(random(500), 0, 0);
-      scale(0.02)
-    
-      
-      box(width / 10);
-      pop();
-    }
-    for (let i = 0; i < 256; i++) {
-      push();
-      normalMaterial();
-      
-      rotateY(cos(frameCount)/50 / 22.0+2000);
-      rotateZ(sin(frameCount)/50 + i / 24.0+1000);
-      //rotateX(sin(frameCount)/50 + i / 20.0+500);
-      translate(random(500), 0, 0);
-      scale(0.02)
-    
-      
-      box(width / 10);
-      pop();
-    }
-    for (let i = 0; i < 256; i++) {
-      push();
-      normalMaterial();
-      
-      rotateY(cos(frameCount)/50 / 22.0-2000);
-      rotateZ(sin(frameCount)/50 + i / 24.0+1000);
-      //rotateX(sin(frameCount)/50 + i / 20.0+500);
-      translate(random(500), 0, 0);
-      scale(0.02)
-    
-      
-      box(width / 10);
-      pop();
-    }
+function keyReleased() {
+    if (keyCode == CONTROL) saveCanvas(gd.timestamp(), 'png');
+  }
+  
+function keyTyped() {
+    letter = key;
   }

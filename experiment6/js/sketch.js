@@ -34,32 +34,32 @@ function setup() {
     textFont(font);
 }
   
-//function draw() {
+function draw() {
     //rotate(sin(frameCount)/20);
-//    text(letter, (sin(frameCount) * width/2) + width/2, (cos(frameCount) * height/2) + height/2);
-//    text(letter, sin(frameCount) * width, height/2);
-//    text(letter, width/2, sin(frameCount) * height);
-//    text(letter, sin(frameCount) * width, sin(frameCount) * height);
-//    text(letter, width - sin(frameCount) * width, sin(frameCount) * height);
-//}
+    text(letter, (sin(frameCount) * width/2) + width/2, (cos(frameCount) * height/2) + height/2);
+    text(letter, sin(frameCount) * width, height/2);
+    text(letter, width/2, sin(frameCount) * height);
+    text(letter, sin(frameCount) * width, sin(frameCount) * height);
+    text(letter, width - sin(frameCount) * width, sin(frameCount) * height);
+}
 
-function mouseMoved() {
+//function mouseMoved() {
     //clear();
-    background(0,0,0, 100)
-    textSize(abs(mouseX-mouseY) + 1);
-    //text(letter, mouseX, mouseY);
-}
+//    background(0,0,0, 100)
+//    textSize(abs(mouseX-mouseY) + 1);
+//    //text(letter, mouseX, mouseY);
+//}
   
-function mouseDragged() {
-    background(0,0,0, 1)
-    textSize(abs(mouseX-mouseY) + 1);
-    text(letter, mouseX, mouseY);
-}
+//function mouseDragged() {
+//    background(0,0,0, 1)
+//    textSize(abs(mouseX-mouseY) + 1);
+//    text(letter, mouseX, mouseY);
+//}
   
-function keyReleased() {
-    if (keyCode == CONTROL) saveCanvas(gd.timestamp(), 'png');
-}
+//function keyReleased() {
+//    if (keyCode == CONTROL) saveCanvas(gd.timestamp(), 'png');
+//}
   
-function keyTyped() {
-    letter = key;
-}
+//function keyTyped() {
+//    letter = key;
+//}

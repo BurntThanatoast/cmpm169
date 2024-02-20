@@ -15,43 +15,52 @@
  * ctrl                : save png
  */
 
-'use strict';
-
-var font = 'sans-serif';
-var letter = 'A';
+var font = 'times-new-roman';
+var letter = 'L';
 
 function setup() {
-  // place our canvas, making it fit our container
-  canvasContainer = $("#canvas-container");
-  let canvas = createCanvas(canvasContainer.width(), canvasContainer.height(), WEBGL);
-  canvas.parent("canvas-container");
-  // resize canvas is the page is resized
-  $(window).resize(function() {
-    console.log("Resizing...");
-    resizeCanvas(canvasContainer.width(), canvasContainer.height());
-  });
-  background(255);
-  fill(0);
-
-  textFont(font);
-  textAlign(CENTER, CENTER);
+    // place our canvas, making it fit our container
+    canvasContainer = $("#canvas-container");
+    let canvas = createCanvas(canvasContainer.width(), canvasContainer.height(), WEBGL);
+    canvas.parent("canvas-container");
+    // resize canvas is the page is resized
+    $(window).resize(function() {
+      console.log("Resizing...");
+      resizeCanvas(canvasContainer.width(), canvasContainer.height());
+    });
+    createCanvas(windowWidth, windowHeight);
+    background(0);
+    fill(250);
+    frameRate(60);
+    textFont(font);
+}
+  
+function draw() {
+    //rotate(sin(frameCount)/20);
+    text(letter, (sin(frameCount) * width/2) + width/2, (cos(frameCount) * height/2) + height/2);
+    text(letter, sin(frameCount) * width, height/2);
+    text(letter, width/2, sin(frameCount) * height);
+    text(letter, sin(frameCount) * width, sin(frameCount) * height);
+    text(letter, width - sin(frameCount) * width, sin(frameCount) * height);
 }
 
 function mouseMoved() {
-  clear();
-  textSize((mouseX - width / 2) * 5 + 1);
-  text(letter, width / 2, mouseY);
+    clear();
+    background(0,0,0, 100)
+    textSize(abs(mouseX-mouseY) + 1);
+    //text(letter, mouseX, mouseY);
 }
-
+  
 function mouseDragged() {
-  textSize((mouseX - width / 2) * 5 + 1);
-  text(letter, width / 2, mouseY);
+    background(0,0,0, 1)
+    textSize(abs(mouseX-mouseY) + 1);
+    text(letter, mouseX, mouseY);
 }
-
+  
 function keyReleased() {
-  if (keyCode == CONTROL) saveCanvas(gd.timestamp(), 'png');
+    if (keyCode == CONTROL) saveCanvas(gd.timestamp(), 'png');
 }
-
+  
 function keyTyped() {
-  letter = key;
+    letter = key;
 }

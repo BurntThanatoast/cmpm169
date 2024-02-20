@@ -33,6 +33,7 @@ function setup() {
     fill(250);
     frameRate(60);
     textFont(font);
+    textAlign(CENTER, CENTER);
 }
   
 function draw() {
